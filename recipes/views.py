@@ -1,12 +1,20 @@
-from django.http import HttpResponse
 from django.shortcuts import render
-
 from utils.recipes.factory import make_recipe
+
+from .models import Recipe
 
 
 def home(request):
+    recepes = Recipe.objects.all().order_by('-id')
     return render(request, 'recipes/pages/home.html', context={
-        'recipes': [make_recipe() for _ in range(10)],
+        'recipes': recepes,
+    })
+
+
+def category(request, category_id):
+    recepes = Recipe.objects.filter(category__id=category_id).order_by('-id')
+    return render(request, 'recipes/pages/home.html', context={
+        'recipes': recepes,
     })
 
 
