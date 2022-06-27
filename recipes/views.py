@@ -5,20 +5,20 @@ from .models import Recipe
 
 
 def home(request):
-    recepes = Recipe.objects.filter(
+    recipes = Recipe.objects.filter(
         is_published=True
     ).order_by('-id')
     return render(request, 'recipes/pages/home.html', context={
-        'recipes': recepes,
+        'recipes': recipes,
     })
 
 
 def category(request, category_id):
-    recepes = Recipe.objects.filter(
+    recipes = Recipe.objects.filter(
         category__id=category_id, is_published=True
     ).order_by('-id')
     return render(request, 'recipes/pages/category.html', context={
-        'recipes': recepes,
+        'recipes': recipes,
     })
 
 
