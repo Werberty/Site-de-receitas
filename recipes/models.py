@@ -1,5 +1,3 @@
-from distutils.command.upload import upload
-from email.policy import default
 
 from django.contrib.auth.models import User
 from django.db import models
@@ -28,7 +26,8 @@ class Recipe(models.Model):
     cover = models.ImageField(
         upload_to='recipes/covers/%Y/%m/%d/', blank=True, default='')
     category = models.ForeignKey(
-        Category, on_delete=models.SET_NULL, null=True, blank=True, default=None
+        Category, on_delete=models.SET_NULL,
+        null=True, blank=True, default=None
     )
     author = models.ForeignKey(
         User, on_delete=models.SET_NULL, null=True
