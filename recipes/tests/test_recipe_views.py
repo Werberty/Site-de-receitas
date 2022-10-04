@@ -19,6 +19,7 @@ class RecipeViewsTest(RecipeTestBase):
 
     def test_recipe_home_shows_no_recipes_fund_if_no_recipes(self):
         response = self.client.get(reverse('recipes:home'))
+
         self.assertIn(
             '<h1>No recipes found here</h1>',
             response.content.decode('utf-8')
