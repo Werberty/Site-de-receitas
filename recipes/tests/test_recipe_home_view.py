@@ -1,3 +1,4 @@
+
 from django.urls import resolve, reverse
 from recipes import views
 
@@ -49,3 +50,10 @@ class RecipeHomeViewsTest(RecipeTestBase):
             '<h1>No recipes found here</h1>',
             response.content.decode('utf-8')
         )
+
+    def test_recipe_home_make_pagination_currect_with_invalid_current_page(self):  # noqa: E501
+        # If it cannot convert query string to integer, set current_page as 1
+        response2 = self.client.get(reverse('recipes:home') + '?page=<2>')
+
+        self.assertEqual(
+            response2.context['pagination_range']['current_page'], 1)
