@@ -53,12 +53,22 @@ class RecipeHomeViewsTest(RecipeTestBase):
             response.content.decode('utf-8')
         )
 
-    def test_recipe_home_make_pagination_currect_with_invalid_current_page(self):  # noqa: E501
+    def test_invalid_page_query_uses_page_one(self):  # noqa: E501
         # If it cannot convert query string to integer, set current_page as 1
-        response2 = self.client.get(reverse('recipes:home') + '?page=<2>')
+        for i in range(8):
+            kwargs = {'author_data': {'username': f'u{i}'}, 'slug': f'r{i}'}
+            self.make_recipe(**kwargs)
 
-        self.assertEqual(
-            response2.context['pagination_range']['current_page'], 1)
+        with patch('recipes.views.PER_PAGE', new=3):
+            response = self.client.get(reverse('recipes:home') + '?page=<2>')
+
+            self.assertEqual(
+                response.context['recipes'].number, 1)
+
+            response = self.client.get(reverse('recipes:home') + '?page=2')
+
+            self.assertEqual(
+                response.context['recipes'].number, 2)
 
     # @patch('recipes.views.PER_PAGE', new=4)
     def test_recipe_home_is_paginated(self):
