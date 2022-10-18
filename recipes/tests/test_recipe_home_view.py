@@ -55,9 +55,7 @@ class RecipeHomeViewsTest(RecipeTestBase):
 
     def test_invalid_page_query_uses_page_one(self):  # noqa: E501
         # If it cannot convert query string to integer, set current_page as 1
-        for i in range(8):
-            kwargs = {'author_data': {'username': f'u{i}'}, 'slug': f'r{i}'}
-            self.make_recipe(**kwargs)
+        self.make_recipe_in_batch(qtd=8)
 
         with patch('recipes.views.PER_PAGE', new=3):
             response = self.client.get(reverse('recipes:home') + '?page=<2>')
@@ -72,10 +70,7 @@ class RecipeHomeViewsTest(RecipeTestBase):
 
     # @patch('recipes.views.PER_PAGE', new=4)
     def test_recipe_home_is_paginated(self):
-
-        for i in range(8):
-            kwargs = {'author_data': {'username': f'u{i}'}, 'slug': f'r{i}'}
-            self.make_recipe(**kwargs)
+        self.make_recipe_in_batch(qtd=8)
 
         with patch('recipes.views.PER_PAGE', new=3):
             response = self.client.get(reverse('recipes:home'))
