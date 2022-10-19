@@ -9,7 +9,7 @@ from parameterized import parameterized
 class AuthorRegisterForUnitTest(TestCase):
     @parameterized.expand([
         ('username', 'Your username'),
-        ('email', 'Your username'),
+        ('email', 'Your e-mail'),
         ('first_name', 'Ex.: John'),
         ('last_name', 'Ex.: Doe'),
         ('password', 'Type your password'),
