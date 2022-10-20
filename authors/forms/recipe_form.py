@@ -68,14 +68,6 @@ class AuthorRecipeForm(forms.ModelForm):
             raise ValidationError(self._my_errors)
         return super_clean
 
-    def clean_title(self):
-        title = self.cleaned_data["title"]
-
-        if len(title) < 5:
-            self._my_errors['title'].append('Must have at leas 5 chars.')
-
-        return title
-
     def clean_preparation_time(self):
         field_name = "preparation_time"
         field_value = self.cleaned_data[field_name]
