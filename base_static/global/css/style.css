@@ -68,6 +68,15 @@ h6 {
     font-family: var(--font-headings);
 }
 
+img {
+    max-width: 100%;
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
 .container {
     max-width: 144rem;
     margin: 0 auto;
@@ -335,7 +344,9 @@ h6 {
     color: var(--color-error-dark);
 }
 
-.form-content input {
+.form-content input, 
+.form-content textarea, 
+.form-content select {
     width: 100%;
     padding: 1rem;
     border-radius: .4rem;
@@ -366,6 +377,10 @@ h6 {
 
 .inline-form {
     display: inline;
+}
+
+.span-2 {
+    grid-column: span 2;
 }
 
 /* Messages */
@@ -425,10 +440,26 @@ h6 {
     margin: 1rem 0;
 }
 
+.authors-dashboard-container {
+    max-width: 64rem;
+    text-align: left;
+    margin: 0 auto;
+    padding: var(--spacing-gutter-medium);
+}
+
+.authors-dashboard-container h3, p, ul, li {
+    list-style: none;
+    margin: 1rem 0;
+}
+
 /* Generics */
 
 .center {
     text-align: center;
+}
+
+.left {
+    text-align: left;
 }
 
 .m-x {
