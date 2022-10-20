@@ -17,7 +17,8 @@
 <h2 id="objetivo">📝 Objetivo</h2>
 
 <p>
-Um site em que usuarios podem olhar receitas publicadas por outro usuarios, e tambem criar uma conta e postar suas proprias receitas
+Projeto desenvolvido no curso de Django do Luiz Otávio Miranda Figueiredo na Udemy.<br><br>
+Um usuário pode ver e buscar receitas publicadas no site, e também se registrar para postar e editar suas próprias receitas, mas a receita só vai para a página inicial do site após o admin autorizar a publicação da receita.
 </p>
 
 <h2 id="funcionalidades">⚙️ Funcionalidades</h2>
