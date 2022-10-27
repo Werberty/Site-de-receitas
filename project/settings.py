@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     # Meus apps
     'recipes',
     'authors',
+    'tag',
     'debug_toolbar',
 ]
 
