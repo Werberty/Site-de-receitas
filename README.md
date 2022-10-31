@@ -10,10 +10,6 @@
  <a href="#tecnologias">Tecnologias</a> • 
 </p>
 
-<h4 align="center"> 
-	🚧  Em construção...  🚧
-</h4>
-
 <h2 id="objetivo">📝 Objetivo</h2>
 
 <p>
@@ -29,13 +25,13 @@ Um usuário pode ver e buscar receitas publicadas no site, e também se registra
 - [x] Dashboard do author
 - [x] Editar receitas não publicadas
 - [x] Criar novas receitas
-- [ ] Menu de navegação
+- [x] Menu de navegação
 
 
 <h2 id="layout">🖼️ Layout</h2>
 
 <h1 align="center">
-  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./assets/site-receitas3.gif" />
+  <img alt="Gif do site de receitas" title="#NextLevelWeek" src="./assets/site-de-receitas-4.gif" />
 </h1>
 
 <h2 id="tecnologias">🛠 Tecnologias</h2>
