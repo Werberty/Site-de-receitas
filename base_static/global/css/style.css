@@ -297,10 +297,6 @@ a {
     padding: 0 2rem;
 }
 
-.preparation-steps a {
-    color: var(--color-primary-dark);
-}
-
 .pagination-content {
     display: flex;
     flex-flow: row wrap;
