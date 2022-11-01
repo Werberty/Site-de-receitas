@@ -1,3 +1,5 @@
+from ctypes.wintypes import tagSIZE
+
 from django.contrib.auth.models import User
 from rest_framework import serializers
 from tag.models import Tag
@@ -27,6 +29,12 @@ class RecipeSerializer(serializers.Serializer):
     tag_objects = TagSerializer(
         many=True,
         source='tags'
+    )
+    tag_link = serializers.HyperlinkedRelatedField(
+        many=True,
+        source='tags',
+        queryset=Tag.objects.all(),
+        view_name='recipes:recipes_api_v2_tag'
     )
 
     def any_method_name(self, recipe):
